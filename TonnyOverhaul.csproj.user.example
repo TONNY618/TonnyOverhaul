@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<PropertyGroup>
+		<!--
+		  Copy this file and remove the ".example" extension so it becomes "TonnyOverhaul.csproj.user",
+		  then update the path below to match your local game installation directory.
+		-->
+		<GameDir>C:\Program Files (x86)\Steam\steamapps\common\Casualties Unknown Demo</GameDir>
+	</PropertyGroup>
+</Project>
