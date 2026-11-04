@@ -8,7 +8,7 @@ indent_size = 4
 tab_width = 4
 insert_final_newline = true
 
-[*.{bat,cmd}]
+[*.{bat,cmd,sln}]
 end_of_line = crlf
 
 [*.{json,yaml,yml,xml}]
@@ -20,3 +20,8 @@ indent_style = tab
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.cs]
+csharp_trailing_comma_in_multiline_lists = true
+csharp_trailing_comma_in_singleline_lists = false
+resharper_arrange_trailing_comma_in_multiline_lists_highlighting = hint
