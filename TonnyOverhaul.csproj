@@ -41,6 +41,27 @@
 		<Reference Include="UnityEngine.CoreModule">
 			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
+		<Reference Include="UnityEngine.AudioModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.RenderPipelines.Core.Runtime">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Physics2DModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 	
 	<ItemGroup>
