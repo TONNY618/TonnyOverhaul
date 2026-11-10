@@ -50,10 +50,6 @@
 		<ModAssets Include="Assets\**\*.*"/>
 	</ItemGroup>
 	
-	<ItemGroup>
-		<EditorConfigFiles Remove=".editorconfig"/>
-	</ItemGroup>
-	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\"/>
 		<Copy SourceFiles="@(ModAssets)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\Assets\%(RecursiveDir)" SkipUnchangedFiles="true"/>
