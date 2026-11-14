@@ -62,6 +62,9 @@
 		<Reference Include="UnityEngine.Physics2DModule">
 			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
 		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\Newtonsoft.Json.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 	
 	<ItemGroup>

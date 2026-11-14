@@ -76,17 +76,24 @@ public class Plugin : BaseUnityPlugin {
 			usable = true,
 			useAction = (body, item) => {
 				item.condition -= 1f;
-				TriggerLampEffect(body.transform);
+				var glow = body.GetStatus<LampGlowStatus>();
+				glow.RemainingSeconds += 5f;
+				glow.Stacks++;
+
+				if (customSound != null)
+					_audioSource.PlayOneShot(customSound);
 			},
 			usableOnLimb = true,
 			useLimbAction = (limb, item) => {
 				limb.shrapnel += 5;
 				limb.skinHealth -= 30;
 				limb.muscleHealth -= 5;
-				limb.pain += 80;
+				limb.pain += 50;
 				limb.bleedAmount += 15;
 				item.condition -= 1f;
 				Sound.Play("bulbbreak", limb.transform.position);
+
+				limb.GetStatus<GlassShardsLimbStatus>().IrritationTimer = 15f;
 			},
 		}, _lampSprite);
 
@@ -143,12 +150,16 @@ public class Plugin : BaseUnityPlugin {
 			healthUsable = true,
 			injectable = true,
 			injectionSickness = 0,
-			onDrink = (_, body) => {
-				TriggerLampEffect(body.transform);
+			onDrink = (ml, body) => {
+				var sip = ml * 0.01f;
+				var glow = body.GetStatus<LampGlowStatus>();
+				glow.RemainingSeconds += 10f * sip;
+
+				if (customSound != null && sip >= 1)
+					_audioSource.PlayOneShot(customSound);
 			},
 			onInject = (ml, limb) => {
-				var dose = ml * 0.01f;
-				limb.pain -= dose * 20;
+				limb.pain -= ml * 2;
 			},
 			qualities = [
 				CUCoreUtils.CreateCraftingQuality("water", 0.5f),
@@ -157,22 +168,6 @@ public class Plugin : BaseUnityPlugin {
 
 		StartCoroutine(SortConsoleAutofillRoutine());
 		// StartCoroutine(GiveStartingItemsRoutine());
-	}
-
-	public void TriggerLampEffect(Transform playerTransform) {
-		if (customSound != null)
-			_audioSource.PlayOneShot(customSound);
-
-		var controller = playerTransform.GetComponentInChildren<LampGlowController>();
-
-		if (controller == null) {
-			var lightObj = new GameObject("LampGlowEffect");
-			lightObj.transform.SetParent(playerTransform, false);
-			lightObj.transform.localPosition = Vector3.zero;
-			controller = lightObj.AddComponent<LampGlowController>();
-		}
-
-		controller.Trigger(5f);
 	}
 
 	private static IEnumerator SortConsoleAutofillRoutine() {
