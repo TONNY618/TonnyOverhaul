@@ -168,6 +168,43 @@ public class Plugin : BaseUnityPlugin {
 
 		StartCoroutine(SortConsoleAutofillRoutine());
 		// StartCoroutine(GiveStartingItemsRoutine());
+
+		var glowMoodle = AssetLoader.LoadSpriteFromPluginFolder(this, "Assets/Sprites/GlowMoodle.png", 100f);
+		var irritationMoodle = AssetLoader.LoadSpriteFromPluginFolder(this, "Assets/Sprites/IrritationMoodle.png", 100f);
+
+		MoodleRegistry.RegisterBody<LampGlowStatus>((body, status) => {
+			if (status.RemainingSeconds <= 0f)
+				return null;
+
+			var tier = status.Stacks switch {
+				>= 5 => 2,
+				>= 3 => 1,
+				_ => 0,
+			};
+
+			return new StatusMoodleDefinition {
+				Intensity = tier,
+				IconSprite = glowMoodle,
+				Name = "Bioluminescent Glow",
+				Description = $"You emit light ({status.RemainingSeconds:0.0}s left, stacks: {status.Stacks}). +Max Speed, +Heart Rate",
+				Important = true,
+				Critical = false,
+			};
+		});
+
+		MoodleRegistry.RegisterLimb<GlassShardsLimbStatus>((limb, status) => {
+			if (status.IrritationTimer <= 0f)
+				return null;
+
+			return new StatusMoodleDefinition {
+				Intensity = status.IrritationTimer > 10f ? 2 : 1,
+				IconSprite = irritationMoodle,
+				Name = $"Glass Irritation ({limb.fullName})",
+				Description = $"Shards are irritating your {limb.fullName.ToLower()} ({status.IrritationTimer:0}s).",
+				Important = false,
+				Critical = false,
+			};
+		});
 	}
 
 	private static IEnumerator SortConsoleAutofillRoutine() {

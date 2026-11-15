@@ -1,3 +1,4 @@
+using CUCoreLib.Registries;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
@@ -77,6 +78,17 @@ public class PortableLampWorldBehaviour : MonoBehaviour {
 		head.muscleHealth -= 1;
 		head.pain += 20;
 		head.bleedAmount += 5;
+
+		MoodleRegistry.AddMoodle(
+			intensity: 1,
+			iconId: "pain",
+			name: "Shattered Glass",
+			description: "A lamp burst right in your face.",
+			critical: false,
+			important: false,
+			key: "tonnyoverhaul.shattered",
+			holdSeconds: 4f
+		);
 	}
 
 	private void OnDestroy() {
