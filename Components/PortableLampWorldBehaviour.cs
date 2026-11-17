@@ -1,9 +1,10 @@
 using CUCoreLib.Registries;
+using TonnyOverhaul.Core;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Components;
 
 public class PortableLampWorldBehaviour : MonoBehaviour {
 	private Item _item = null!;
@@ -22,7 +23,7 @@ public class PortableLampWorldBehaviour : MonoBehaviour {
 		_humAudio.loop = true;
 		_humAudio.playOnAwake = false;
 		_humAudio.volume = 3f;
-		_humAudio.clip = Plugin.Instance.customSound;
+		_humAudio.clip = ModAssets.CustomSound;
 	}
 
 	private void Start() {

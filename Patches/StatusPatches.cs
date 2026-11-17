@@ -1,8 +1,10 @@
 using CUCoreLib.Helpers;
 using HarmonyLib;
+using TonnyOverhaul.Components;
+using TonnyOverhaul.Statuses;
 using UnityEngine;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Patches;
 
 [HarmonyPatch(typeof(Body), "HandleVariableUpdates")]
 internal static class StatusPatches {

@@ -1,6 +1,6 @@
 using CUCoreLib.Data;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Statuses;
 
 [StatusOptions(Key = "tonnyoverhaul.glassShards", SaveEnabled = true)]
 public class GlassShardsLimbStatus : LimbStatus {

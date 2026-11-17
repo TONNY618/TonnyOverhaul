@@ -1,8 +1,10 @@
 using CUCoreLib.Helpers;
+using TonnyOverhaul.Core;
+using TonnyOverhaul.Statuses;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Components;
 
 public class CaveLampStationBehaviour : MonoBehaviour {
 	private BuildingEntity _building = null!;
@@ -36,9 +38,9 @@ public class CaveLampStationBehaviour : MonoBehaviour {
 		glow.RemainingSeconds += 25f;
 		glow.Stacks++;
 
-		var sound = Plugin.Instance.customSound;
+		var sound = ModAssets.CustomSound;
 		if (sound != null)
-			Plugin.Instance.audioSource.PlayOneShot(sound);
+			ModAssets.AudioSource.PlayOneShot(sound);
 
 		if (TryGetComponent<UsableObject>(out var usable))
 			Destroy(usable);

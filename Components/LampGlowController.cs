@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Components;
 
 public class LampGlowController : MonoBehaviour {
 	private Light2D _light2D = null!;

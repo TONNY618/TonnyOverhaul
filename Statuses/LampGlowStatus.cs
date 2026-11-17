@@ -1,7 +1,7 @@
 using CUCoreLib.Data;
 using Newtonsoft.Json;
 
-namespace TonnyOverhaul;
+namespace TonnyOverhaul.Statuses;
 
 [StatusOptions(Key = "tonnyoverhaul.lampGlow", SaveEnabled = true, ClientAuthoritative = false)]
 public class LampGlowStatus : BodyStatus {
