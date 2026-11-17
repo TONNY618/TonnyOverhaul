@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="$(MSBuildProjectFile).user" Condition="Exists('$(MSBuildProjectFile).user')"/>
+	<Import Project="$(MSBuildProjectFile).user" Condition="Exists('$(MSBuildProjectFile).user')" />
 	
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
@@ -13,7 +13,7 @@
 	
 	<!-- Validate that the game directory exists before starting the build -->
 	<Target Name="ValidateGameDir" BeforeTargets="BeforeBuild">
-		<Error Condition="!Exists('$(GameDir)')" Text="Game directory not found at '$(GameDir)'. Please copy '$(MSBuildProjectFile).user.example' to '$(MSBuildProjectFile).user' and set the correct path in &lt;GameDir&gt;."/>
+		<Error Condition="!Exists('$(GameDir)')" Text="Game directory not found at '$(GameDir)'. Please copy '$(MSBuildProjectFile).user.example' to '$(MSBuildProjectFile).user' and set the correct path in &lt;GameDir&gt;." />
 	</Target>
 	
 	<ItemDefinitionGroup>
@@ -47,12 +47,12 @@
 		<None Update="Assets\**">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<ModAssets Include="Assets\**\*.*"/>
+		<ModAssets Include="Assets\**\*.*" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\"/>
-		<Copy SourceFiles="@(ModAssets)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\Assets\%(RecursiveDir)" SkipUnchangedFiles="true"/>
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\" />
+		<Copy SourceFiles="@(ModAssets)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\Assets\%(RecursiveDir)" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>
