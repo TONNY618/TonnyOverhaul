@@ -68,15 +68,17 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<None Update="Assets\**">
+		<None Update="Assets\**;Locales\**">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<ModAssets Include="Assets\**\*.*" />
+		<ModLocales Include="Locales\**\*.*" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\" />
 		<Copy SourceFiles="@(ModAssets)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\Assets\%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(ModLocales)" DestinationFolder="$(GameDir)\BepInEx\plugins\TonnyOverhaul\Locales\%(RecursiveDir)" SkipUnchangedFiles="true" />
 	</Target>
 
 </Project>
