@@ -68,7 +68,7 @@ public class PortableLampWorldBehaviour : MonoBehaviour {
 		if (Vector2.Distance(transform.position, player.transform.position) > 3f) return;
 
 		player.happiness -= 10f;
-		PlayerCamera.main?.DoAlert("The lamp shattered in front of you!");
+		PlayerCamera.main?.DoAlert(LocaleRegistry.Get("other", "toLampShattered", "The lamp shattered in front of you!"));
 
 		var head = System.Array.Find(player.limbs, l => l.name.ToLower().Contains("head"));
 
@@ -83,8 +83,8 @@ public class PortableLampWorldBehaviour : MonoBehaviour {
 		MoodleRegistry.AddMoodle(
 			intensity: 1,
 			iconId: "pain",
-			name: "Shattered Glass",
-			description: "A lamp burst right in your face.",
+			name: LocaleRegistry.Get("moodle", "toShatteredGlass", "Shattered Glass"),
+			description: LocaleRegistry.Get("moodle", "toShatteredGlassdsc", "A lamp burst right in your face."),
 			critical: false,
 			important: false,
 			key: "tonnyoverhaul.shattered",

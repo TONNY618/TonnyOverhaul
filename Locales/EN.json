@@ -1,0 +1,34 @@
+{
+  "item": {
+    "toStrangeLamp": "Strange lamp",
+    "toStrangeLampdsc": "When eaten, it makes a strange sound and makes you glow.",
+    "toPortableLamp": "Portable lamp",
+    "toPortableLampdsc": "A battery-fed lamp for the fuzzy cave explorer."
+  },
+  "building": {
+    "toCaveLamp": "Bioluminescent lamp",
+    "toCaveLampdsc": "An odd glowing fixture rooted into the cave floor. Breaks easily.",
+    "toLampShrine": "Luminescent sconce",
+    "toLampShrinedsc": "A wall-mounted bulb filled with glowing nectar."
+  },
+  "moodle": {
+    "toGlow": "Bioluminescent glow",
+    "toGlowdsc": "You emit light ({0}s left, stacks: {1}). +Max Speed, +Heart Rate.",
+    "toGlassIrritation": "Glass irritation ({0})",
+    "toGlassIrritationdsc": "Shards are irritating your {0} ({1}s).",
+    "toShatteredGlass": "Shattered Glass",
+    "toShatteredGlassdsc": "A lamp burst right in your face."
+  },
+  "other": {
+    "toAbsorbGlow": "Absorb glow",
+    "toLampShattered": "The lamp shattered in front of you!"
+  },
+  "log": {},
+  "command": {},
+  "option": {},
+  "liquid": {
+    "toGlowJuice": "Luminescent nectar",
+    "toGlowJuicedsc": "A glowing liquid derived from cave lamps. Drinking it fills you with light."
+  },
+  "title": {}
+}

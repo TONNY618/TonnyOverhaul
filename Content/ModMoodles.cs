@@ -22,8 +22,12 @@ public static class ModMoodles {
 			return new StatusMoodleDefinition {
 				Intensity = tier,
 				IconSprite = glowSprite,
-				Name = "Bioluminescent glow",
-				Description = $"You emit light ({status.RemainingSeconds:0.0}s left, stacks: {status.Stacks}). +Max Speed, +Heart Rate",
+				Name = LocaleRegistry.Get("moodle", "toGlow", "Bioluminescent glow"),
+				Description = string.Format(
+					LocaleRegistry.Get("moodle", "toGlowdsc", "You emit light ({0}s left, stacks: {1}). +Max Speed, +Heart Rate."),
+					status.RemainingSeconds.ToString("0.0"),
+					status.Stacks
+				),
 				Important = true,
 				Critical = false,
 			};
@@ -37,8 +41,15 @@ public static class ModMoodles {
 			return new StatusMoodleDefinition {
 				Intensity = status.IrritationTimer > 10f ? 2 : 1,
 				IconSprite = irritationSprite,
-				Name = $"Glass irritation ({limb.fullName})",
-				Description = $"Shards are irritating your {limb.fullName.ToLower()} ({status.IrritationTimer:0}s).",
+				Name = string.Format(
+					LocaleRegistry.Get("moodle", "toGlassIrritation", "Glass irritation ({0})"),
+					limb.fullName
+				),
+				Description = string.Format(
+					LocaleRegistry.Get("moodle", "toGlassIrritationdsc", "Shards are irritating your {0} ({1}s)."),
+					limb.fullName.ToLower(),
+					status.IrritationTimer.ToString(".0")
+				),
 				Important = false,
 				Critical = false,
 			};

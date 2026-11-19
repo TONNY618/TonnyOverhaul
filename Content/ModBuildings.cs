@@ -70,8 +70,8 @@ public static class ModBuildings {
 			],
 			ConfigurePrefab = prefab => {
 				var usable = prefab.AddComponent<UsableObject>();
-				usable.didLangString = true;
-				usable.toggleString = "Absorb glow";
+				usable.didLangString = false;
+				usable.langToggleString = "toAbsorbGlow";
 				usable.rangeMultiplier = 1f;
 			},
 		});
