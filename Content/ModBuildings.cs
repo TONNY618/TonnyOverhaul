@@ -75,5 +75,39 @@ public static class ModBuildings {
 				usable.rangeMultiplier = 1f;
 			},
 		});
+
+		BuildingEntityRegistry.Register("toLockedCrate", new CustomBuildingEntityDefinition {
+			Name = "Locked supply crate",
+			Description = "A reinforced crate with a mechanical lock.",
+			Sprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "Crates", "LockedCrate.png")),
+			Health = 2000f,
+			Metallic = true,
+			HitSoundReferenceId = "metal",
+			BlockFootstepSoundId = 6,
+			LayerEnum = BuildingLayer.Ground,
+
+			AddRigidbody2D = true,
+			RigidbodyBodyType = RigidbodyType2D.Dynamic,
+			RigidbodyGravityScale = 1f,
+			RequireGround = false,
+
+			ItemsDropOnDestroy = [
+				BuildingEntityRegistry.AddDrop("toStrangeLamp", chance: 0.8f, conditionMin: 0.6f, conditionMax: 1f),
+				BuildingEntityRegistry.AddDrop("scrapmetal", conditionMin: 0.5f, conditionMax: 1f),
+			],
+
+			ItemCategoriesToAdd = ["medical", "utility"],
+			GuaranteedDropAmount = 2,
+
+			ConfigurePrefab = prefab => {
+				var usable = prefab.AddComponent<UsableObject>();
+				usable.didLangString = false;
+				usable.langToggleString = "toPickLock";
+
+				var openable = prefab.AddComponent<Openable>();
+				openable.isKeypad = false;
+				openable.lockpickAnglePrecision = 12f;
+			},
+		});
 	}
 }

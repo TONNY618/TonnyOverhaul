@@ -9,7 +9,9 @@
     "toCaveLamp": "Bioluminescent lamp",
     "toCaveLampdsc": "An odd glowing fixture rooted into the cave floor. Breaks easily.",
     "toLampShrine": "Luminescent sconce",
-    "toLampShrinedsc": "A wall-mounted bulb filled with glowing nectar."
+    "toLampShrinedsc": "A wall-mounted bulb filled with glowing nectar.",
+    "toLockedCrate": "Locked supply crate",
+    "toLockedCratedsc": "A reinforced crate with a mechanical lock."
   },
   "moodle": {
     "toGlow": "Bioluminescent glow",
@@ -21,7 +23,8 @@
   },
   "other": {
     "toAbsorbGlow": "Absorb glow",
-    "toLampShattered": "The lamp shattered in front of you!"
+    "toLampShattered": "The lamp shattered in front of you!",
+    "toPickLock": "Pick lock"
   },
   "log": {},
   "command": {},
