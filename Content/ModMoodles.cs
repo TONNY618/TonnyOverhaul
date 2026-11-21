@@ -8,7 +8,7 @@ namespace TonnyOverhaul.Content;
 
 public static class ModMoodles {
 	public static void Register() {
-		var glowSprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "GlowMoodle.png"), 100f);
+		var glowSprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "Moodles", "GlowMoodle.png"), 100f);
 		MoodleRegistry.RegisterBody<LampGlowStatus>((body, status) => {
 			if (status.RemainingSeconds <= 0f)
 				return null;
@@ -33,7 +33,7 @@ public static class ModMoodles {
 			};
 		});
 
-		var irritationSprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "IrritationMoodle.png"), 100f);
+		var irritationSprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "Moodles", "IrritationMoodle.png"), 100f);
 		MoodleRegistry.RegisterLimb<GlassShardsLimbStatus>((limb, status) => {
 			if (status.IrritationTimer <= 0f)
 				return null;
