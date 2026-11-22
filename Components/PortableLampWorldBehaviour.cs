@@ -36,17 +36,30 @@ public class PortableLampWorldBehaviour : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (_item.condition is <= 0f or > 0.3f) return;
+		switch (_item.condition) {
+			case > 0f and <= 0.3f: {
+				_flickerTimer -= Time.deltaTime;
 
-		_flickerTimer -= Time.deltaTime;
+				if (_flickerTimer > 0f) return;
 
-		if (_flickerTimer > 0f) return;
+				_light2D.enabled = !_light2D.enabled;
+				_flickerTimer = Random.Range(0.05f, 0.25f);
 
-		_light2D.enabled = !_light2D.enabled;
-		_flickerTimer = Random.Range(0.05f, 0.25f);
+				if (!_humAudio.isPlaying)
+					_humAudio.Play();
 
-		if (!_humAudio.isPlaying && _battery.GetCharge() > 0)
-			_humAudio.Play();
+				return;
+			}
+			case > 0.3f:
+				_light2D.enabled = true;
+				break;
+			case <= 0f:
+				_light2D.enabled = false;
+				break;
+		}
+
+		if (_humAudio.isPlaying)
+			_humAudio.Stop();
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision) {
