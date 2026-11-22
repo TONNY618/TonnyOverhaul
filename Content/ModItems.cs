@@ -3,6 +3,7 @@ using CUCoreLib.Helpers;
 using CUCoreLib.Registries;
 using TonnyOverhaul.Components;
 using TonnyOverhaul.Core;
+using TonnyOverhaul.Minigames;
 using TonnyOverhaul.Statuses;
 using UnityEngine;
 
@@ -67,6 +68,14 @@ public static class ModItems {
 				Offset = Vector2.zero,
 			},
 			SpawnFrequency = 1,
+			useAction = (body, item) => {
+				if (item.battery == null || !item.battery.hasBattery) {
+					PlayerCamera.main?.PlayUISound(PlayerCamera.UISoundType.Deny);
+					return;
+				}
+
+				CUCoreMinigames.TryStartDefinition(() => new LampTuneMinigame(), item);
+			},
 		}.AddSpawnComponent<PortableLampWorldBehaviour>(), ModAssets.LampSprite);
 	}
 }

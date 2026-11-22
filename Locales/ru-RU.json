@@ -24,7 +24,10 @@
   "other": {
     "toAbsorbGlow": "Поглотить свечение",
     "toLampShattered": "Лампа разбилась прямо перед тобой!",
-    "toPickLock": "Взломать замок"
+    "toPickLock": "Взломать замок",
+    "toLampTuneGuide": "Кликни по всем контактам, чтобы откалибровать лампу.\n{0}с",
+    "toLampCalibrated": "Лампа откалибрована.",
+    "toLampCalibrationFailed": "Ты провалил калибровку."
   },
   "log": {},
   "command": {},

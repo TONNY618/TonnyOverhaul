@@ -65,6 +65,15 @@
 		<Reference Include="Newtonsoft.Json">
 			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\Newtonsoft.Json.dll</HintPath>
 		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(GameDir)\CasualtiesUnknown_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 	
 	<ItemGroup>

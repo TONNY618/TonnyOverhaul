@@ -24,7 +24,10 @@
   "other": {
     "toAbsorbGlow": "Absorb glow",
     "toLampShattered": "The lamp shattered in front of you!",
-    "toPickLock": "Pick lock"
+    "toPickLock": "Pick lock",
+    "toLampTuneGuide": "Click all loose contacts to calibrate the lamp.\n{0}s",
+    "toLampCalibrated": "The lamp is calibrated.",
+    "toLampCalibrationFailed": "You failed the calibration."
   },
   "log": {},
   "command": {},
