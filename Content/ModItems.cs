@@ -1,3 +1,4 @@
+using System.IO;
 using CUCoreLib.Data;
 using CUCoreLib.Helpers;
 using CUCoreLib.Registries;
@@ -77,5 +78,13 @@ public static class ModItems {
 				CUCoreMinigames.TryStartDefinition(() => new LampTuneMinigame(), item);
 			},
 		}.AddSpawnComponent<PortableLampWorldBehaviour>(), ModAssets.LampSprite);
+
+		ItemRegistry.Register("toCryoliteChunk", new CustomItemInfo {
+			fullName = "Cryolite chunk",
+			description = "Na3[AlF6]. A natural mineral that can be processed into a small amount of liquid cryolite.",
+			value = 1,
+			weight = 1f,
+			rec = new Recognition(8),
+		}, AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "Items", "CryoliteChunk.png"), 10f));
 	}
 }

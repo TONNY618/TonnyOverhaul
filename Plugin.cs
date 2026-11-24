@@ -38,5 +38,6 @@ public class Plugin : BaseUnityPlugin {
 		ModLiquids.Register();
 		ModMoodles.Register();
 		ModBuildings.Register();
+		ModTiles.Register();
 	}
 }
