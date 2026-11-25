@@ -47,7 +47,7 @@ public class CaveLampStationBehaviour : MonoBehaviour {
 	}
 
 	private void OnDestroy() {
-		if (_building == null || _building.health >= 0.5f) return;
+		if (_building == null || _building.GetHealth() >= 0.5f) return;
 
 		Sound.Play("bulbbreak", transform.position);
 
