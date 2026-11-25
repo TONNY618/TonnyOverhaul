@@ -109,5 +109,28 @@ public static class ModBuildings {
 				openable.lockpickAnglePrecision = 12f;
 			},
 		});
+
+		BuildingEntityRegistry.Register("toLightMine", new CustomBuildingEntityDefinition {
+			Name = "Unstable light mine",
+			Description = "A fragile glowing bulb wired as a proximity trap.",
+			Sprite = AssetLoader.LoadSpriteFromPluginFolder(Plugin.Instance, Path.Combine("Assets", "Sprites", "Traps", "LightMine.png")),
+			SortingOrder = 5,
+
+			UseGlowPlantMaterial = true,
+			CopyGlowPlantLayer = true,
+
+			Health = 15f,
+			RequireGround = true,
+			HitSoundReferenceId = "glass",
+
+			Placement = BuildingPlacementType.Floor,
+			GenerationStyle = BuildingGenerationStyle.Standard,
+			SurfaceOffset = 0.1f,
+			RandomFlip = false,
+			SpawnMinPerChunk = 0.25f,
+			SpawnMaxPerChunk = 0.45f,
+
+			SpawnComponents = [typeof(LightMineTrapBehaviour).AssemblyQualifiedName!],
+		});
 	}
 }

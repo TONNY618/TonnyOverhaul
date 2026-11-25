@@ -13,7 +13,9 @@
     "toLampShrine": "Luminescent sconce",
     "toLampShrinedsc": "A wall-mounted bulb filled with glowing nectar.",
     "toLockedCrate": "Locked supply crate",
-    "toLockedCratedsc": "A reinforced crate with a mechanical lock."
+    "toLockedCratedsc": "A reinforced crate with a mechanical lock.",
+    "toLightMine": "Unstable light mine",
+    "toLightMinedsc": "A fragile glowing bulb wired as a proximity trap."
   },
   "moodle": {
     "toGlow": "Bioluminescent glow",
